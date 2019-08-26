@@ -109,6 +109,12 @@ body {
   display: flex;
   justify-content: center;
 }
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+}
 header,
 footer {
   background: rgba(76, 175, 80, 0.3);
@@ -140,24 +146,12 @@ main p {
   font-size: 1.35em;
 }
 
-.flex-container {
-  height: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-
-
-}
-
 .flex-items {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #000;
   line-height: 1.5em;
   font-size: 1em;
   background: rgba(51, 204, 204, 0.3);
-  height: 230px;
-  width: 27%;
   border-radius: 7px;
   padding: 0px 20px;
   display: flex;
@@ -249,6 +243,17 @@ main p {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+   @media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
